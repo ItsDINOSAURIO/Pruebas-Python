@@ -1,8 +1,8 @@
-# Pruebas-Python-Excercism
+# Pruebas-Python
 
-## Prácticas realizadas en python dentro de Excercism
+## Prácticas realizadas en python dentro de Excercism o con paquterías varias del entorno
 
-Éstos proyectos contienen funciones básicas del lenguaje, como apoyo para el entendimiento de métodos a emplear en el mismo con los objetos que ya existen predefinidamente sin el uso especial de alguna librería.
+Éstos proyectos contienen funciones básicas del lenguaje, como apoyo para el entendimiento de métodos a emplear en el mismo con los objetos que ya existen predefinidamente sin el uso especial de alguna librería para el curso excercism. En el caso del resto de proyectos se fueron desarrollando sobre la marcha.
 
 ## Requisitos
 
