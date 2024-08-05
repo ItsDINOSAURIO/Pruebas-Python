@@ -926,3 +926,53 @@ print(list_inventory({"coal":7, "wood":11, "diamond":2, "iron":7, "silver":0}))
 
 '''
 
+def add_items(current_cart,items_to_add):
+    for i in items_to_add:
+        if i in current_cart:
+            current_cart[i]+=1
+        else:
+            current_cart[i]=1
+
+    return current_cart
+
+def read_notes(notes):
+    cart={}
+    add_items(cart,notes)
+    return cart
+
+def update_recipes(ideas,recipe_updates):
+    ideas.update(recipe_updates)
+    return ideas 
+
+def sort_entries(cart):
+    sort=dict(sorted(cart.items()))
+    return sort
+
+def send_to_store(cart,aisle_mapping):
+    f_cart={}
+    cart=dict(sorted(cart.items()))
+    for i in reversed(cart):
+        if i in aisle_mapping:
+            aisle,refrigeration=aisle_mapping[i]
+            f_cart[i]=[cart[i],aisle,refrigeration]
+    return f_cart
+
+def update_store_inventory(fulfillment_cart,store_inventory):
+    for i in fulfillment_cart:
+        if i in store_inventory:
+            store_inventory[i][0]-=fulfillment_cart[i][0]
+            if store_inventory[i][0]<=0:
+                store_inventory[i][0]='Out of Stock'
+    return store_inventory
+
+
+print(add_items({'Banana': 3, 'Apple': 2, 'Orange': 1},['Banana', 'Orange', 'Blueberries', 'Banana']))
+print(read_notes(['Blueberries', 'Pear', 'Orange', 'Banana', 'Apple']))
+print(update_recipes({'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
+                    'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}},
+(('Banana Bread', {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3}),)))
+print(sort_entries({'Banana': 3, 'Apple': 2, 'Orange': 1}))
+print(send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2},
+                  {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False], 'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]}))
+print(update_store_inventory({'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]},
+{'Banana': [15, 'Aisle 5', False], 'Apple': [12, 'Aisle 4', False], 'Orange': [1, 'Aisle 4', False], 'Milk': [4, 'Aisle 2', True]}))
