@@ -52,10 +52,11 @@ lb2.place(x=100,y=100)'''
 '''Aplicación corregida con grid: se genera un grid 
 donde se pueden ubicar distintos elementos, sin embargo se ajusta 
 la ventana como con .pack
-'''
+
 
 #con sticky se colocan los elementos según la dirección deseada,
-#sin definirlo será centrado
+#sin definirlo será centrado; pad 'x' y 'y' se especifican los pixeles de 
+# distancia hacia otros objetos; show remplazará los caracteres por el símbolo indicado 
 tb=Entry(fr)
 tb.grid(row=0,column=1,padx=10,pady=10)
 tb.config(fg="green",justify="center",show="*")
@@ -65,6 +66,8 @@ tb1=Entry(fr)
 tb1.grid(row=1,column=1,padx=10,pady=10)
 lb1=Label(fr,text="Introduzca Texto: ")
 lb1.grid(row=1,column=0,sticky="w",padx=10,pady=10)
+'''
+
 
 
 
