@@ -845,8 +845,7 @@ print(clean_up((('Brass Spyglass', '4B', 'Abandoned Lighthouse', ('4', 'B'), 'Bl
 '''
 
 # Tema : Dicts - Inventory Managment
-''' '''
-
+''' 
 def create_inventory(input_list):
     """Create a dict that tracks the amount (count) of each element on the `items` list.
 
@@ -920,5 +919,10 @@ print(decrement_items({"coal":2, "wood":1, "diamond":2}, ["coal", "coal", "wood"
 print(remove_item({"coal":2, "wood":1, "diamond":2}, "coal"))
 print(remove_item({"coal":2, "wood":1, "diamond":2}, "gold"))
 print(list_inventory({"coal":7, "wood":11, "diamond":2, "iron":7, "silver":0}))
+'''
 
-print(add_items({"wood": 2, "gold": 1, "diamond": 3}, ["wood", "gold", "gold"]))
+#Tema : Dict Methods - Mecha Munch Managment
+''' 
+
+'''
+
